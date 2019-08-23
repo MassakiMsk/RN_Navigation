@@ -40,15 +40,15 @@ const StackNavigator = createStackNavigator(
   },
 );
 
-StackNavigator.navigationOptions = ({navigation}) => {
-  let tabBarVisible = true;
-  if (navigation.state.index > 0) {
-    tabBarVisible = false;
-  }
-  return {
-    tabBarVisible,
-  };
-};
+// StackNavigator.navigationOptions = ({navigation}) => {
+//   let tabBarVisible = true;
+//   if (navigation.state.index > 0) {
+//     tabBarVisible = false;
+//   }
+//   return {
+//     tabBarVisible,
+//   };
+// };
 
 const AboutStack = createStackNavigator({
   About,
@@ -56,11 +56,11 @@ const AboutStack = createStackNavigator({
 
 const BottomNavigator = createBottomTabNavigator(
   {
-    Home: StackNavigator,
-    About: AboutStack,
+    StackNavigator,
+    AboutStack,
   },
   {
-    contentComponent: BottomTabBar,
+    tabBarComponent: BottomTabBar,
   },
 );
 

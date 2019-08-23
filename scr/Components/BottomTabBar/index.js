@@ -15,22 +15,38 @@ export default class BottomTabBar extends Component {
 
   render() {
     return (
-      <ScrollView>
-        <View style={{paddingTop: Platform.OS === 'ios' ? 50 : 10}}>
-          <TouchableOpacity
-            style={{
-              justifyContent: 'center',
-              alignItems: 'center',
-              height: 40,
-              marginBottom: 10,
-              borderWidth: 1,
-              borderColor: '#0FF',
-            }}
-            onPress={this.navigateToScreen('Profile')}>
-            <Text>{'Perfil'}</Text>
-          </TouchableOpacity>
-        </View>
-      </ScrollView>
+      <View
+        style={{
+          flexDirection: 'row',
+          paddingBottom: Platform.OS === 'ios' ? 20 : 0,
+        }}>
+        <TouchableOpacity
+          style={{
+            flex: 1,
+            justifyContent: 'center',
+            alignItems: 'center',
+            height: 40,
+            marginBottom: 10,
+            borderWidth: 1,
+            borderColor: '#0FF',
+          }}
+          onPress={this.navigateToScreen('StackNavigator')}>
+          <Text>{'Home'}</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={{
+            flex: 1,
+            justifyContent: 'center',
+            alignItems: 'center',
+            height: 40,
+            marginBottom: 10,
+            borderWidth: 1,
+            borderColor: '#0FF',
+          }}
+          onPress={this.navigateToScreen('AboutStack')}>
+          <Text>{'About'}</Text>
+        </TouchableOpacity>
+      </View>
     );
   }
 }
