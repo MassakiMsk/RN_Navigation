@@ -27,7 +27,7 @@ export default class Profile2 extends Component {
   render() {
     return (
       <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-        <TouchableOpacity
+        {/* <TouchableOpacity
           style={{
             justifyContent: 'center',
             alignItems: 'center',
@@ -38,7 +38,7 @@ export default class Profile2 extends Component {
           }}
           onPress={this.handleClick}>
           <Text>{'Voltar para a Home'}</Text>
-        </TouchableOpacity>
+        </TouchableOpacity> */}
       </View>
     );
   }

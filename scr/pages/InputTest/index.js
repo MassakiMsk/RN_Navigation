@@ -1,11 +1,28 @@
 import React, {Component} from 'react';
-import {View, Text, TouchableOpacity} from 'react-native';
+import {View, Text, TouchableOpacity, TextInput} from 'react-native';
+
+import TextMask from '../../utils/TextMask';
 
 import Header from '../../Components/Header';
 
 // import { Container } from './styles';
 
 export default class InputTest extends Component {
+  static navigationOptions = ({navigation}) => {
+    return {
+      header: (
+        <Header
+          {...{navigation, title: navigation.getParam('title', 'InputTest')}}
+        />
+      ),
+    };
+  };
+
+  state = {
+    cpf: '',
+    selection: {start: 0, end: 0},
+  };
+
   handleClick = e => {
     e.preventDefault();
 
@@ -15,23 +32,23 @@ export default class InputTest extends Component {
   };
 
   render() {
-    const {navigation} = this.props;
+    const {cpf} = this.state;
     return (
       <>
-        <Header {...{navigation, title: 'InputTest', hideBack: true}} />
         <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-          <TouchableOpacity
+          <TextInput
             style={{
-              justifyContent: 'center',
-              alignItems: 'center',
-              height: 40,
-              width: 240,
+              height: 50,
+              width: 300,
+              paddingHorizontal: 20,
               borderWidth: 1,
-              borderColor: '#00F',
+              borderColor: '#05F',
+              fontSize: 18,
             }}
-            onPress={this.handleClick}>
-            <Text>{'Voltar para a Home'}</Text>
-          </TouchableOpacity>
+            placeholder={'Cpf'}
+            value={TextMask.cpf(cpf)}
+            onChangeText={cpf => this.setState({cpf})}
+          />
         </View>
       </>
     );

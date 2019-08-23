@@ -29,19 +29,7 @@ export default class Home extends Component {
   render() {
     return (
       <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-        <Text>{'Estou em Home'}</Text>
-        <TouchableOpacity
-          style={{
-            justifyContent: 'center',
-            alignItems: 'center',
-            height: 40,
-            width: 240,
-            borderWidth: 1,
-            borderColor: '#00F',
-          }}
-          onPress={this.handleClick}>
-          <Text>{'Ir para Perfil'}</Text>
-        </TouchableOpacity>
+        <Text style={{fontSize: 25}}>{'Aplicativo de testes gerais'}</Text>
       </View>
     );
   }
