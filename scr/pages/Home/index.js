@@ -23,13 +23,26 @@ export default class Home extends Component {
 
     const {navigation} = this.props;
 
-    navigation.navigate('Profile', {title: 'Perfil'});
+    navigation.navigate('VideoPlayer', {title: 'video player'});
   };
 
   render() {
     return (
       <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
         <Text style={{fontSize: 25}}>{'Aplicativo de testes gerais'}</Text>
+
+        <TouchableOpacity
+          style={{
+            justifyContent: 'center',
+            alignItems: 'center',
+            height: 40,
+            width: 240,
+            borderWidth: 1,
+            borderColor: '#00F',
+          }}
+          onPress={this.handleClick}>
+          <Text>{'Ir para Video Player'}</Text>
+        </TouchableOpacity>
       </View>
     );
   }

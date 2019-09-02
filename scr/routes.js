@@ -15,6 +15,7 @@ import Profile2 from './pages/Profile2';
 import Settings from './pages/Settings';
 import InputTest from './pages/InputTest';
 import About from './pages/About';
+import VideoPlayer from './pages/VideoPlayer';
 
 const StackNavigator = createStackNavigator(
   {
@@ -23,6 +24,7 @@ const StackNavigator = createStackNavigator(
     Profile2,
     Settings,
     InputTest,
+    VideoPlayer,
   },
   {
     initialRouteName: 'Home',
@@ -49,6 +51,15 @@ const StackNavigator = createStackNavigator(
 //     tabBarVisible,
 //   };
 // };
+
+StackNavigator.navigationOptions = ({navigation}) => {
+  let {routeName} = navigation.state.routes[navigation.state.index];
+  let navigationOptions = {};
+  if (routeName === 'VideoPlayer') {
+    navigationOptions.tabBarVisible = false;
+  }
+  return navigationOptions;
+};
 
 const AboutStack = createStackNavigator({
   About,
